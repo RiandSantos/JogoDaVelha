@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author SAMSUNG
+ * @author Rian Santos
  */
 public class Principal extends javax.swing.JFrame {
 
@@ -22,8 +22,8 @@ public class Principal extends javax.swing.JFrame {
     String ganhador;
     String jogador1;
     String jogador2;
-    ImageIcon icon = new ImageIcon("x.png");
-    ImageIcon icon2 = new ImageIcon("o.png");
+    ImageIcon icon = new ImageIcon(Principal.class.getResource("/icons/x.png"), "X");
+    ImageIcon icon2 = new ImageIcon(Principal.class.getResource("/icons/o.png"), "o");
     /**
      * Creates new form Principal
      */
@@ -40,6 +40,7 @@ public class Principal extends javax.swing.JFrame {
         b[6] = btn7;
         b[7] = btn8;
         b[8] = btn9;
+        lblJogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folha3.png")));
         jogador1 = (String) JOptionPane.showInputDialog(null, "Digite o nome do primeiro jogador:", "Jogador 1", JOptionPane.INFORMATION_MESSAGE, icon, null, "");
         jogador2 = (String) JOptionPane.showInputDialog(null, "Digite o nome do segundo jogador:", "Jogador 2", JOptionPane.INFORMATION_MESSAGE, icon2, null, "");
         for(int i = 0;i<9; i++){
