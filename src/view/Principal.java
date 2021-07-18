@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package view;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,10 +8,11 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author Rian Santos
+ * @author Rian Santos(RiandSantos - GitHub)
  */
 public class Principal extends javax.swing.JFrame {
 
+    //Variaveis
     int qtde;
     int jogador;
     int mat[][] = new int[3][3];
@@ -24,9 +22,7 @@ public class Principal extends javax.swing.JFrame {
     String jogador2;
     ImageIcon icon = new ImageIcon(Principal.class.getResource("/icons/x.png"), "X");
     ImageIcon icon2 = new ImageIcon(Principal.class.getResource("/icons/o.png"), "o");
-    /**
-     * Creates new form Principal
-     */
+    
     public Principal() {
         initComponents();
         qtde = 1;
@@ -50,6 +46,7 @@ public class Principal extends javax.swing.JFrame {
         lblNomes.setHorizontalAlignment(SwingConstants.CENTER);
     }
 
+    //Alterna as rodadas dos jogadores e checa a jogada em busca de um(a) vencedor(a)
     public void jogada(JButton b, int x, int y) {
         b.setEnabled(false);
         if (jogador == 1) {
@@ -67,7 +64,8 @@ public class Principal extends javax.swing.JFrame {
         }
         qtde++;
     }
-
+    
+    //Verifica se houve um(a) vencedor(a) durante a rodada
     public void checarJogada(int x) {
         if (vitoria(x) == true) {
             JOptionPane.showMessageDialog(null, "Jogador " + ganhador + " venceu!", "Vitória", JOptionPane.INFORMATION_MESSAGE);
@@ -77,6 +75,7 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
+    //Condições de vitória da partida
     public boolean vitoria(int x) {
         for (int i = 0; i < mat.length; i++) {
             if (mat[i][0] == x && mat[i][1] == x && mat[i][2] == x) {
@@ -95,12 +94,14 @@ public class Principal extends javax.swing.JFrame {
         return false;
     }
 
+    //Bloqueia o jogo quando houver um(a) vencedor(a)
     public void fimjogo() {
         for (int i = 0; i < 9; i++) {
             b[i].setEnabled(false);
         }
     }
 
+    //Limpa o jogo(zera as jogadas e o nome dos jogadores)
     public void limpar() {
         for (int i = 0; i < 9; i++) {
             b[i].setEnabled(true);
@@ -117,7 +118,7 @@ public class Principal extends javax.swing.JFrame {
         jogador2 = "";
         ganhador = "";
     }
-
+    //Condição de empate
     public void empate() {
         if (qtde >= 9) {
             JOptionPane.showMessageDialog(null, "Ops, deu empate! \nVá em opção e Novo Jogo para jogar novamente! :D", "Empatou!", 1);
@@ -262,8 +263,6 @@ public class Principal extends javax.swing.JFrame {
         btn4.setBounds(10, 120, 110, 100);
 
         pnlJogoDaVelha.setLayout(null);
-
-        lblJogo.setIcon(new javax.swing.ImageIcon("/home/rian/Área de Trabalho/jogoDaVelha_2_1/folha3.png")); // NOI18N
         pnlJogoDaVelha.add(lblJogo);
         lblJogo.setBounds(0, 0, 370, 340);
 
@@ -317,78 +316,66 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnItemNovoJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnItemNovoJogoActionPerformed
-        // TODO add your handling code here:
+        //Menu para iniciar um novo jogo
         limpar();
         jogador1 = (String) JOptionPane.showInputDialog(null, "Digite o nome do primeiro jogador:", "Jogador 1", JOptionPane.INFORMATION_MESSAGE, icon, null, "");
         jogador2 = (String) JOptionPane.showInputDialog(null, "Digite o nome do segundo jogador:", "Jogador 2", JOptionPane.INFORMATION_MESSAGE, icon2, null, "");
     }//GEN-LAST:event_mnItemNovoJogoActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        // TODO add your handling code here:
         btn7.setBackground(new Color(0,0,0,0));
         jogada(btn7, 2, 0);
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        // TODO add your handling code here:
         btn3.setBackground(new Color(0,0,0,00));
         jogada(btn3, 0, 2);
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        // TODO add your handling code here:
         btn1.setBackground(new Color(0,0,0,0));
         jogada(btn1, 0, 0);
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-        // TODO add your handling code here:
         btn2.setBackground(new Color(0,0,0,0));
         jogada(btn2, 0, 1);
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        // TODO add your handling code here:
         btn5.setBackground(new Color(0,0,0,0));
         jogada(btn5, 1, 1);
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        // TODO add your handling code here:
         btn8.setBackground(new Color(0,0,0,0));
         jogada(btn8, 2, 1);
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        // TODO add your handling code here:
         btn9.setBackground(new Color(0,0,0,0));
         jogada(btn9, 2, 2);
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        // TODO add your handling code here:
         btn6.setBackground(new Color(0,0,0,0));
         jogada(btn6, 1, 2);
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        // TODO add your handling code here:
         btn4.setBackground(new Color(0,0,0,0));
         jogada(btn4, 1, 0);
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void menuSairMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_menuSairMenuSelected
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_menuSairMenuSelected
 
     private void mnOpcaoMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_mnOpcaoMenuSelected
-        // TODO add your handling code here:
 
     }//GEN-LAST:event_mnOpcaoMenuSelected
 
     private void mnOpcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnOpcaoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_mnOpcaoActionPerformed
 
     /**
