@@ -1,5 +1,8 @@
-# jogoDaVelha
+# Jogo da Velha
 
-UM JOGO DA VELHA DESENVOLVIDO EM JAVA UTILIZANDO A IDE NETBEANS,
+### Jogo da Velha desenvolvido em Java com a IDE NetBeans
 
-O diretorio das imagens alterado, o arquivo .jar gerado não carregava as imagens[RESOLVIDO]!
+Como rodar o programa?
+1. Faça um `clone` desse repositório;
+2. Abra / Execute o arquivo dentro de uma IDE com suporte ao `JAVA` ;
+3. E aproveite o programa! :D
